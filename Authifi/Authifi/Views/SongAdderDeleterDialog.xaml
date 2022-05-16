@@ -1,0 +1,129 @@
+﻿<Window x:Class="Authifi.Views.SongAdderDeleterDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Authifi.Views"
+        mc:Ignorable="d"
+        Title="Authifi"
+        d:DesignHeight="400"
+        d:DesignWidth="350"
+        Height="400"
+        Width="375"    
+        Background="Black"
+        FontFamily="Palatino Linotype"
+        Foreground="Gray">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="175"/>
+            <ColumnDefinition Width="175"/>
+        </Grid.ColumnDefinitions>
+        <Grid
+            Grid.Column="0"
+            Name="AddGrid"
+            Margin="10,10,0,0">
+
+            <TextBlock
+                Text="Add Song To Playlist:"/>
+
+            <ListView
+                Name="ListOfAddPlaylists" 
+                Margin="0,25,0,0"
+                Height="290"
+                VerticalAlignment="Top"
+                Background="Transparent">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+
+                            <Button
+                                Click="Adder_DoubleClick"
+                                Height="28"
+                                Width="140"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top">
+
+                                <TextBlock
+                                    Name="PlaylistInAdder"
+                                    Text="{Binding Name}"
+                                    Foreground="Gray"
+                                    Height="30"
+                                    Margin="10,0,0,0"
+                                    
+                                    FontStyle="Normal"/>
+                            </Button>
+
+                        </Grid>
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+
+
+        <Grid
+            Grid.Column="1"
+            Name="DeleteGrid"
+            Margin="10,10,0,0">
+
+            <TextBlock
+                Text="Delete Song From Playlist:"/>
+
+            <ListView
+                Name="ListOfDeletePlaylists" 
+                Margin="0,25,0,0"
+                Height="290"
+                VerticalAlignment="Top"
+                Background="Transparent">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+
+                            <Button
+                                Click="Delete_DoubleClick"
+                                Height="28"
+                                Width="140"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top">
+
+                                <TextBlock
+                                    Name="PlaylistInAdder"
+                                    Text="{Binding Name}"
+                                    Foreground="Gray"
+                                    Height="30"
+                                    Margin="10,0,0,0"
+                                    
+                                    FontStyle="Normal"/>
+                            </Button>
+
+                        </Grid>
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+
+        <Button
+                Name="LikeButton"
+                Background="Transparent"
+                VerticalAlignment="Bottom"
+                BorderThickness="0"
+                Width="50"
+                Click="LikeButton_Click" 
+                Grid.ColumnSpan="2" 
+                Height="56">
+
+            <Image
+                    Name="LikeIcon"
+                    Source="/Assets/Like.png"
+                    Height="40"
+                    Width="40"/>
+        </Button>
+
+
+
+    </Grid>
+
+</Window>
