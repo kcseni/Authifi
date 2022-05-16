@@ -1,2 +1,9 @@
 # Authifi
-Music player based on Spotify API
+
+**Authors:**  
+
+* Balassa Tamás
+* Éliás Ágnes
+* Keresztes Csenge
+
+Music player based on Spotify API.
